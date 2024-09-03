@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.note-bg {
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+input[type="checkbox"] {
+  accent-color: #ff916f;
+}
+.text-color {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 95, 109, 1) 0%,
+    rgba(255, 195, 113, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-style {
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer !important;
+  color: #fff !important;
+}
+.gradient-text-link {
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+.nav {
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  z-index: 99;
+}
+.menu-responsive {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+  transition: all 0.1s ease-in;
+  animation: slideMenu 0.4s linear;
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: #0f0b07;
+  z-index: 8;
+  text-transform: uppercase;
+  color: #fc8f71;
+}
+@keyframes slideMenu {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 50%;
+  }
+}
+
+.spinner.middle,
+.spinner.bottom {
+  margin-top: 3px;
+}
+.d-none {
+  display: none;
+}
+.spinner {
+  height: 3px;
+  width: 23px;
+  background-color: #fe706d;
+  transition: all 0.7s;
+}
+
+#openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.middle {
+  opacity: 0;
+}
+
+#openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.top {
+  transform: rotate(140deg) translate(-15%, 100%);
+  margin-top: 9px;
+}
+
+#openSidebarMenu:checked ~ .sidebarIconToggle > .spinner.bottom {
+  transform: rotate(-140deg) translate(11%, 150%);
+  margin-top: -8px;
+}
+input#openSidebarMenu {
+  display: none;
+}
+.sidebarIconToggle {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.animateMenu {
+  animation: animatemenu 0.8s linear;
+}
+
+@keyframes animatemenu {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+
+  50% {
+    top: -5%;
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+/* ******* Loader ******** */
+
+/* .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98.79vw;
+  height: 100vh;
+  background-color: black;
+}
+.pl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.375em;
+  height: 9.375em;
+}
+
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+
+.pl__arrows {
+  animation-name: arrows42;
+  transform: rotate(45deg);
+  transform-origin: 16px 52px;
+}
+
+.pl__ring-rotate,
+.pl__ring-stroke {
+  transform-origin: 80px 80px;
+}
+
+.pl__ring-rotate {
+  animation-name: ringRotate42;
+}
+
+.pl__ring-stroke {
+  animation-name: ringStroke42;
+  transform: rotate(-45deg);
+}
+
+.pl__tick {
+  animation-name: tick42;
+}
+
+.pl__tick:nth-child(2) {
+  animation-delay: -1.75s;
+}
+
+.pl__tick:nth-child(3) {
+  animation-delay: -1.5s;
+}
+
+.pl__tick:nth-child(4) {
+  animation-delay: -1.25s;
+}
+
+.pl__tick:nth-child(5) {
+  animation-delay: -1s;
+}
+
+.pl__tick:nth-child(6) {
+  animation-delay: -0.75s;
+}
+
+.pl__tick:nth-child(7) {
+  animation-delay: -0.5s;
+}
+
+.pl__tick:nth-child(8) {
+  animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes ringRotate42 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes ringStroke42 {
+  from,
+  to {
+    stroke-dashoffset: 452;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    stroke-dashoffset: 169.5;
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes tick42 {
+  from,
+  3%,
+  47%,
+  to {
+    stroke-dashoffset: -12;
+  }
+
+  14%,
+  36% {
+    stroke-dashoffset: 0;
+  }
+}

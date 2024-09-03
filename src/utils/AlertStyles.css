@@ -1,0 +1,24 @@
+.custom-email-success-alert {
+  background-color: #000 !important; /* White background color */
+  border: 2px solid #fff; /* Green border for success */
+  border-radius: 8px; /* Adjust the border radius if needed */
+  color: #fff;
+}
+
+.custom-success-alert {
+  background-color: #000 !important; /* White background color */
+  border: 2px solid #28a745; /* Green border for success */
+  border-radius: 8px; /* Adjust the border radius if needed */
+}
+
+.custom-error-alert {
+  background-color: #000 !important; /* White background color */
+  border: 2px solid #dc3545; /* Red border for error */
+  border-radius: 8px; /* Adjust the border radius if needed */
+}
+
+.custom-warning-alert {
+  background-color: #000 !important; /* White background color */
+  border: 2px solid #ffc107; /* Yellow border for warning */
+  border-radius: 8px; /* Adjust the border radius if needed */
+}
